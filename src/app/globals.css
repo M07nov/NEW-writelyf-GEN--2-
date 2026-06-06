@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --brand-red: #C0392B;
+  --brand-red-dark: #922B21;
+  --brand-blue: #2E86AB;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #FAFAFA;
+  color: #1a1a1a;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-red text-white px-6 py-3 rounded-xl font-semibold hover:bg-brand-red-dark transition-colors duration-200 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-brand-red border-2 border-brand-red px-6 py-3 rounded-xl font-semibold hover:bg-red-50 transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply text-gray-600 px-4 py-2 rounded-xl font-medium hover:bg-gray-100 transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6;
+  }
+
+  .input {
+    @apply w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-red/30 focus:border-brand-red transition-colors;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .section-title {
+    @apply text-xl font-bold text-gray-900;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-gray-900;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
